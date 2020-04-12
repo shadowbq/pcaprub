@@ -28,12 +28,13 @@ artifacts:
 # https://www.appveyor.com/docs/installed-software#ruby
 environment:
   matrix:
-    - ruby_version: "193"
-    - ruby_version: "200"
-    # - ruby_version: "200-x64" (Winpcap.h is not linking under 64bit ruby builds)
-    - ruby_version: "21"
-    # - ruby_version: "21-x64"
-    - ruby_version: "22"
+    - ruby_version: "24"
+    - ruby_version: "24-64"
+    - ruby_version: "25"
+    - ruby_version: "25-64"
+    - ruby_version: "26"
+    - ruby_version: "26-64"
+
 
 cache:
   - C:\Users\appveyor\AppData\Local\Temp\chocolatey
