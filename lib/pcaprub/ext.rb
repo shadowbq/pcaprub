@@ -10,6 +10,6 @@ begin
   else
     require 'pcaprub_c'
   end
-rescue Exception
+rescue StandardError
   require 'pcaprub_c'
 end
