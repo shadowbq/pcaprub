@@ -11,7 +11,7 @@ end
 gem 'rake-compiler', '>= 0.6.0'
 gem 'rubygems-tasks'
 
-if Bundler.current_ruby.mri? || Bundler.current_ruby.mingw? || Bundler.current_ruby.x64_mingw?
+#if Bundler.current_ruby.mri? || Bundler.current_ruby.mingw? || Bundler.current_ruby.x64_mingw?
   gem 'rake', '>= 0.9.2'
   gem 'git', '~> 1.3.0'
-end
+#end

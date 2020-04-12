@@ -1,0 +1,27 @@
+name: Test
+
+on: push
+
+jobs:
+  test:
+    name: Run regression tests
+    runs-on: [ ubuntu-latest ]
+    strategy:
+      matrix:
+        ruby: [2.4]
+    steps:
+      - run: whoami
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install deps
+        run: sudo apt-get install libpcap-dev -qq
+      - name: Set up Ruby ${{ matrix.ruby }}
+        uses: actions/setup-ruby@v1.1.1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+      - name: Install gems
+        run: sudo gem install bundler
+      - name: Run bundler
+        run: sudo bundle
+      - name: Run tests
+        run: sudo bundle exec rake
